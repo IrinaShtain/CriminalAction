@@ -5,14 +5,20 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 public class CrimeFragment extends Fragment{
     private Crime mCrime;
     private TextView mTitleField;
+    private Button mDateButton;
+    private CheckBox mSolvedCheckBox;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,7 +40,7 @@ public class CrimeFragment extends Fragment{
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                mCrime.setmTitle(charSequence.toString());
+                mCrime.setTitle(charSequence.toString());
             }
 
             @Override
@@ -42,6 +48,19 @@ public class CrimeFragment extends Fragment{
 
             }
         });
+
+        mDateButton = (Button)view.findViewById(R.id.crime_date);
+        mDateButton.setText(DateFormat.format("E, MMM dd, yyyy", mCrime.getDate()));
+        mDateButton.setEnabled(false);
+
+        mSolvedCheckBox = (CheckBox) view.findViewById(R.id.crime_solved);
+        mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                mCrime.setSolved(b);
+            }
+        });
+
         return view;
     }
 }
