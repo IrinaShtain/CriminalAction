@@ -9,17 +9,17 @@ import java.util.UUID;
 public class CrimeLab {
     private static CrimeLab sCrimeLab;
     private List<Crime> mCrimes;
-    private Context context;
+    private Context mcontext;
 
-    private static CrimeLab get(Context context) {
-        if (sCrimeLab != null) {
+    public static CrimeLab get(Context context) {
+        if (sCrimeLab == null) {
             sCrimeLab = new CrimeLab(context);
         }
         return sCrimeLab;
     }
     private CrimeLab(Context context) {
         mCrimes = new ArrayList<>();
-        this.context = context;
+        mcontext = context;
         for (int i = 0; i < 100; i++) {
             Crime crime = new Crime();
             crime.setTitle("Crime #" + i);

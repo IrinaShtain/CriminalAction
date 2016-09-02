@@ -20,7 +20,7 @@ public class Crime {
         return mId;
     }
 
-    public String getmTitle() {
+    public String getTitle() {
         return mTitle;
     }
 
