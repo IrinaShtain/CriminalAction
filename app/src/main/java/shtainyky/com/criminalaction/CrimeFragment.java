@@ -130,6 +130,6 @@ public class CrimeFragment extends Fragment{
         mDateButton.setText(DateFormat.format("EEEE, dd MMM yyyy ", mCrime.getDate()));
     }
     private void updateTime() {
-        mTimeButton.setText(DateFormat.format("hh:mm:ss", mCrime.getDate()));
+        mTimeButton.setText(DateFormat.format("hh:mm:ss a", mCrime.getDate()));
     }
 }
