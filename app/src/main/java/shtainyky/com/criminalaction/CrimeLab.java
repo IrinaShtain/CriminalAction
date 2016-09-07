@@ -44,6 +44,8 @@ public class CrimeLab {
     }
     public void removeCrime(Crime crime)
     {
+        String value = crime.getId().toString();
+        mDatabase.delete(CrimeTable.NAME, UUID + "= ?",new String[]{value});
 //        for (int i = 0; i < mCrimes.size(); i++) {
 //            if (mCrimes.get(i).getId() == crime.getId()) {
 //                mCrimes.remove(i);
