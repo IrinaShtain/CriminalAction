@@ -17,6 +17,7 @@ import shtainyky.com.criminalaction.database.CrimeDbSchema.CrimeTable;
 import static shtainyky.com.criminalaction.database.CrimeDbSchema.Cols.DATE;
 import static shtainyky.com.criminalaction.database.CrimeDbSchema.Cols.SOLVED;
 import static shtainyky.com.criminalaction.database.CrimeDbSchema.Cols.SUSPECT;
+import static shtainyky.com.criminalaction.database.CrimeDbSchema.Cols.SUSPECT_PHONE;
 import static shtainyky.com.criminalaction.database.CrimeDbSchema.Cols.TITLE;
 import static shtainyky.com.criminalaction.database.CrimeDbSchema.Cols.UUID;
 
@@ -102,6 +103,7 @@ public class CrimeLab {
         values.put(TITLE, crime.getTitle());
         values.put(DATE, crime.getDate().getTime());
         values.put(SUSPECT, crime.getSuspect());
+        values.put(SUSPECT_PHONE, crime.getSuspectPhone());
         values.put(SOLVED, crime.isSolved()? 1:0);
 
         return values;

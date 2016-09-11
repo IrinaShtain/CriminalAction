@@ -10,6 +10,7 @@ import shtainyky.com.criminalaction.Crime;
 import static shtainyky.com.criminalaction.database.CrimeDbSchema.Cols.DATE;
 import static shtainyky.com.criminalaction.database.CrimeDbSchema.Cols.SOLVED;
 import static shtainyky.com.criminalaction.database.CrimeDbSchema.Cols.SUSPECT;
+import static shtainyky.com.criminalaction.database.CrimeDbSchema.Cols.SUSPECT_PHONE;
 import static shtainyky.com.criminalaction.database.CrimeDbSchema.Cols.TITLE;
 import static shtainyky.com.criminalaction.database.CrimeDbSchema.Cols.UUID;
 
@@ -24,12 +25,14 @@ public class CrimeCursorWrapper extends CursorWrapper {
         long date = getLong(getColumnIndex(DATE));
         int isSolved = getInt(getColumnIndex(SOLVED));
         String suspect = getString(getColumnIndex(SUSPECT));
+        String suspectPhone = getString(getColumnIndex(SUSPECT_PHONE));
 
         Crime crime = new Crime(java.util.UUID.fromString(uuidString));
         crime.setTitle(title);
         crime.setDate(new Date(date));
         crime.setSolved(isSolved != 0);
         crime.setSuspect(suspect);
+        crime.setSuspectPhone(suspectPhone);
         return crime;
     }
 }
