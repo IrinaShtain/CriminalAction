@@ -3,18 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/crime_title_label"
-        style="?android:listSeparatorTextViewStyle"/>
-    <EditText
-        android:id="@+id/crime_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/crime_title_hint"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+    <include layout="@layout/view_camera_and_title"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,21 +13,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp">
         <CheckBox
             android:id="@+id/crime_solved"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/crime_solved_label"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:layout_gravity="center_horizontal"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crime_report_text"
+            android:id="@+id/crime_report"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"/>
+    </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             >
             <Button
                 android:id="@+id/crime_date"
@@ -53,7 +51,7 @@
         </LinearLayout>
 
 
-    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,23 +66,17 @@
             android:id="@+id/crime_suspect"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"/>
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/crime_report_text"
-            android:id="@+id/crime_report"
+            android:text="@string/crime_suspect_call"
+            android:id="@+id/crime_suspect_call"
             android:layout_gravity="center_horizontal"
+
             android:layout_weight="1"/>
+
     </LinearLayout>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/crime_suspect_call"
-        android:id="@+id/crime_suspect_call"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+
 
 
 </LinearLayout>
