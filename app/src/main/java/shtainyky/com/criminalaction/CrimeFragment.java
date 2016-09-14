@@ -222,6 +222,14 @@ public class CrimeFragment extends Fragment{
         //*********
         mPhotoView = (ImageView) view.findViewById(R.id.crime_photo);
         updatePhotoView();
+        mPhotoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager manager = getFragmentManager();
+                PhotoFragment dialog = PhotoFragment.newInstance(mCrime);
+                dialog.show(manager, "Photo");
+            }
+        });
 
         return view;
     }
