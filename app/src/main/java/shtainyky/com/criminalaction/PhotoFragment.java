@@ -36,7 +36,7 @@ public class PhotoFragment extends DialogFragment {
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        return;
+
                     }
                 })
                 .create();
